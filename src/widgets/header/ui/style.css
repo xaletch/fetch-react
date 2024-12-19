@@ -1,0 +1,38 @@
+.header {
+  border-radius: 24px;
+  background: #F5F5F5;
+}
+.header__inner {
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__links {
+  display: flex;
+  align-items: center;
+}
+.header__inner nav {
+  margin-left: 40px;
+}
+.header__list {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.header__list-item a {
+  padding: 0 6px;
+}
+.header__buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.header__buttons-item {
+  padding: 10px 16px;
+  background: #FFFFFF;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
