@@ -1,15 +1,13 @@
 const API_URL = 'https://api.great-habits.ru/api/v1';
 
-const AUTH_TOKEN = localStorage.getItem('auth_token') || '';
-
-export const API_MASK = async (URL, DATA, METHOD) => {
+export const API_MASK = async (URL, DATA, METHOD, AUTH_TOKEN) => {
   try {
     const url = `${API_URL}/${URL}`;
     const res = await fetch(url, {
       method: METHOD,
       headers: {
         'Content-Type': 'application/json',
-        ...(AUTH_TOKEN && `Authorization: Bearer ${AUTH_TOKEN}`)
+        ...(AUTH_TOKEN ? { Authorization: `Bearer ${AUTH_TOKEN}` } : {})
       },
       body: METHOD !== 'GET' ? JSON.stringify(DATA) : null,
     });
@@ -23,8 +21,8 @@ export const API_MASK = async (URL, DATA, METHOD) => {
 };
 
 export const API = {
-  get: (URL, DATA) => API_MASK(URL, DATA, 'GET'),
-  post: (URL, DATA) => API_MASK(URL, DATA, 'POST'),
-  delete: (URL, DATA) => API_MASK(URL, DATA, 'DELETE'),
-  put: (URL, DATA) => API_MASK(URL, DATA, 'PUT'),
+  get: (URL, DATA, AUTH_TOKEN) => API_MASK(URL, DATA, 'GET', AUTH_TOKEN),
+  post: (URL, DATA, AUTH_TOKEN) => API_MASK(URL, DATA, 'POST', AUTH_TOKEN),
+  delete: (URL, DATA, AUTH_TOKEN) => API_MASK(URL, DATA, 'DELETE', AUTH_TOKEN),
+  put: (URL, DATA, AUTH_TOKEN) => API_MASK(URL, DATA, 'PUT', AUTH_TOKEN),
 };

@@ -1,0 +1,34 @@
+.account {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 0 3px #1d1d1d;
+  cursor: pointer;
+  user-select: none;
+}
+.avatar-username {
+  display: flex;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+}
+.username {
+  color: #1D1D1D;
+  font-size: 16px;
+  line-height: 1.2;
+  text-transform: capitalize;
+}

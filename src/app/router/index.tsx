@@ -1,7 +1,7 @@
 import React from 'react'
 import { Layout, LayoutAuth } from '../../shared/ui'
 import { createBrowserRouter } from 'react-router'
-import { Login, Register } from '../../pages'
+import { Home, Login, Register } from '../../pages'
 
 export const router = createBrowserRouter([
   {
@@ -10,7 +10,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <div>home</div>
+        element: <Home />
       }
     ]
   },

@@ -4,6 +4,7 @@ import { useForm } from '../../models/hook'
 import { useRegisterMutation } from '../../models/hook/auth/useRegister';
 import { Link, useNavigate } from 'react-router';
 import { setLocalstorage } from '../../../../shared/lib/utils'
+import { useAuth } from '../../../../shared/lib/hooks/isAuth';
 
 
 export const RegisterForm = () => {
@@ -16,6 +17,8 @@ export const RegisterForm = () => {
 
   const { register, isLoading, isError, error: errorMessage } = useRegisterMutation();
 
+  const { setToken } = useAuth();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -25,8 +28,9 @@ export const RegisterForm = () => {
       const res = await register(data);
 
       if (res.jwt) {
-
         setLocalstorage('auth_token', res.jwt);
+        setToken(res.jwt);
+
         navigate({ to: '/' });
       }
     }

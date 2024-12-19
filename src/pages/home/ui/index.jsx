@@ -1,5 +1,9 @@
+import { Container } from '../../../shared/ui'
+
 export const Home = () => {
   return (
-    <div>Главна</div>
+    <Container>
+      <h1>Главная</h1>
+    </Container>
   )
 }
