@@ -1,0 +1,14 @@
+.section {
+  width: 100%;
+}
+
+.section-full {
+  flex: 1;
+}
+.section-full .container {
+  height: 100%;
+}
+
+.section-home {
+  margin-bottom: 16px;
+}

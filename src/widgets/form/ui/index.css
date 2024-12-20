@@ -17,3 +17,10 @@
   font-weight: 600;
   line-height: 1.2;
 }
+
+@media screen and (max-width: 580px) {
+  .form-content {
+    width: 100%;
+    max-width: 100%;
+  }
+}

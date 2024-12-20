@@ -4,7 +4,7 @@ import { LoginForm } from '../../../features/auth'
 
 export const Login = () => {
   return (
-    <Container>
+    <Container cl={"auth-container"}>
       <Form title={'Войти'}>
         <LoginForm />
       </Form>

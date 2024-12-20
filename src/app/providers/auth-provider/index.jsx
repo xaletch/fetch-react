@@ -14,7 +14,7 @@ export const AuthProvider = ({ children }) => {
 
   const isAuth = Boolean(token);
 
-  const { user, isError } = useUserQuery();
+  const { user, isError, isLoading } = useUserQuery();
   
   useEffect(() => {
     if (isError) {
@@ -53,7 +53,7 @@ export const AuthProvider = ({ children }) => {
   }, [token]);
 
   return (
-    <AuthContext.Provider value={{isAuth, setToken, userData}}>
+    <AuthContext.Provider value={{isAuth, setToken, userData, isLoading}}>
       {children}
     </AuthContext.Provider>
   )

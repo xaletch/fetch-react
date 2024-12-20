@@ -1,7 +1,7 @@
 import './input.css'
 
 // eslint-disable-next-line react/prop-types
-export const Input = ({ type, value, onChange, name, placeholder, error, isError }) => {
+export const Input = ({ type, value, onChange, name, placeholder, error, isError, isDisabled }) => {
   return (
     <>
       <input 
@@ -10,7 +10,8 @@ export const Input = ({ type, value, onChange, name, placeholder, error, isError
         value={value}
         name={name} 
         onChange={onChange} 
-        placeholder={placeholder} 
+        placeholder={placeholder}
+        disabled={isDisabled}
       />
       {error && <span className='error-span'>{error}</span>}
     </>

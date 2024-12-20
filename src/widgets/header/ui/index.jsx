@@ -6,12 +6,7 @@ import { useAuth } from '../../../shared/lib/hooks/isAuth'
 import { Account } from '../../../entities/account'
 import { removeLocalstorage } from '../../../shared/lib/utils'
 
-const headerList = [
-  {
-    name: 'Главная',
-    path: '/'
-  }
-]
+const headerList = [];
 
 const hederButtons = [
   {
@@ -22,7 +17,7 @@ const hederButtons = [
     name: 'Регистрация',
     path: '/register'
   }
-]
+];
 
 export const Header = () => {
   const { isAuth, setToken, userData } = useAuth();
@@ -37,7 +32,7 @@ export const Header = () => {
       <div className="header">
         <div className="header__inner">
           <div className='header__links'>
-            <Link to={'/'}>Логотип</Link>
+            {/* <Link to={'/'}>Логотип</Link> */}
             <nav>
               <ul className="header__list">
                 {headerList.map((item, index) => (

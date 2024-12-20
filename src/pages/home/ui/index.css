@@ -1,0 +1,21 @@
+.user__form-inner {
+  display: flex;
+  gap: 24px;
+}
+
+
+.user__form-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.user__form-error {
+  color: rgb(241, 77, 77);
+}
+
+@media screen and (max-width: 780px) {
+  .user__form-inner {
+    flex-direction: column;
+  }
+}

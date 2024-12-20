@@ -4,7 +4,7 @@ import { RegisterForm } from '../../../features/auth'
 
 export const Register = () => {
   return (
-    <Container>
+    <Container cl={"auth-container"}>
       <Form title="Регистрация">
         <RegisterForm />
       </Form>
